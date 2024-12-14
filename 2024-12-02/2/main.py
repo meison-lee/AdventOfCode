@@ -59,11 +59,12 @@ my_list = [
 
 safe = 0
 for list in my_list:
-  output1,_ = checkIncreaseExcept(list, -1)
-  output2,_ = checkDecreaseExcept(list, -1)
-  if output1 or output2:
-    safe += 1
-    break
+  for index in range(len(list)):
+    output1,_ = checkIncreaseExcept(list, index)
+    output2,_ = checkDecreaseExcept(list, index)
+    if output1 or output2:
+      safe += 1
+      break
 
 print(safe)
 
